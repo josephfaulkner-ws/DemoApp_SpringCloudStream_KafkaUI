@@ -1,0 +1,14 @@
+spring:
+    application:
+        name: message-example
+
+    cloud:
+        stream:
+            defaultBinder: kafka
+            bindings:
+                logMessage-in-0:
+                    destination: messages-in-to-webapp-topic
+                messages-out-0:
+                    destination: messages-out-from-webapp-topic
+                    producer:
+                        required-groups: auditGroup
